@@ -1,0 +1,142 @@
+{
+  "theme": "Dual Theme (Light/Dark). Default to high-contrast Dark Mode for the Marketing Landing Page to maximize visual impact, and provide a clean Light/Dark toggle for the Student Portal.",
+  "typography": {
+    "headings": {
+      "family": "Cabinet Grotesk, system-ui, sans-serif",
+      "weights": ["700", "800", "900"],
+      "tracking": "tighter (-0.03em to -0.05em)",
+      "usage": "Hero typography, Section Titles, Stat Numbers. Must feel bold and structural."
+    },
+    "body": {
+      "family": "Satoshi, Inter, sans-serif",
+      "weights": ["400", "500", "600"],
+      "tracking": "normal",
+      "usage": "Paragraphs, Dashboard Data, UI Elements, Tooltips."
+    },
+    "mono": {
+      "family": "JetBrains Mono, monospace",
+      "usage": "Mock test timers, code snippets in doubt solver, small technical labels (uppercase + wide tracking)."
+    }
+  },
+  "colors": {
+    "primary": {
+      "DEFAULT": "#2563EB",
+      "hover": "#1D4ED8",
+      "light": "#60A5FA",
+      "dark": "#1E3A8A",
+      "glow": "rgba(37, 99, 235, 0.4)"
+    },
+    "background": {
+      "light": "#F8F9FA",
+      "dark": "#050505"
+    },
+    "surface": {
+      "light": "#FFFFFF",
+      "dark": "#121212",
+      "glass_light": "rgba(255, 255, 255, 0.7)",
+      "glass_dark": "rgba(10, 10, 10, 0.6)",
+      "border_light": "rgba(0, 0, 0, 0.08)",
+      "border_dark": "rgba(255, 255, 255, 0.1)"
+    },
+    "accent": {
+      "success": "#10B981",
+      "warning": "#F59E0B",
+      "destructive": "#EF4444"
+    }
+  },
+  "layouts": {
+    "marketing_bento": {
+      "grid": "grid-cols-1 md:grid-cols-8 lg:grid-cols-12 gap-6",
+      "cards": "rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 overflow-hidden relative transition-transform duration-500 hover:scale-[1.02]",
+      "shadow": "shadow-[0_8px_32px_rgba(0,0,0,0.12)]"
+    },
+    "dashboard": {
+      "grid": "grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6",
+      "cards": "rounded-2xl border border-border bg-card p-6 shadow-sm",
+      "sidebar": "w-72 border-r border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+    },
+    "spacing": "Use generous padding. Sections should use py-24 or py-32. Internal card padding p-8. Avoid cramped UI."
+  },
+  "visual_enhancers": {
+    "glassmorphism": "Use heavily for fixed headers and floating UIs. Require `backdrop-blur-xl` and a 1px solid inner stroke.",
+    "gradients": "No cheap linear gradients. Use subtle, large radial gradients for background glows (e.g., a massive 800px radial glow of primary blue at 10% opacity fixed behind the bento grid).",
+    "noise": "Add a subtle SVG noise filter overlay (opacity 2-4%) across the marketing page to break the digital flatness."
+  },
+  "motion": {
+    "lenis": "Mandatory for smooth momentum scrolling on the marketing site. Initializes in the main layout.",
+    "kinetic_hero": "Masked line-by-line reveal. Split the H1 into lines, wrap each in an `overflow-hidden` span, and animate the inner text from `y: '100%'` to `y: '0%'` using Framer Motion with an elastic spring.",
+    "scroll_reveals": "Use Framer Motion `whileInView`. Elements should fade and slide up subtly (y: 40 -> 0) with staggered delays.",
+    "micro_interactions": "Buttons should have a subtle scale down on tap (`whileTap={{ scale: 0.95 }}`). Links should have sliding underlines."
+  },
+  "components_and_features": {
+    "marketing": [
+      "Hero Section: Kinetic text, subtle CSS 3D floating 'Knowledge Cube' using framer-motion (rotateX/Y mapped to mouse position), and primary CTA.",
+      "Editorial Marquee: High-contrast, very slow scrolling outline text (text-transparent stroke-white) saying 'JEE ADVANCED • NEET UG • CBSE BOARDS • CUET'. Use `react-fast-marquee`.",
+      "Stats Band: Massive typography stats (e.g., '1M+ Students', '99.9% Success') counting up when in view.",
+      "Bento Grid: Must include custom interactive mini-UIs inside the cards (e.g., Mock Tests card shows a mini bar chart, AI Doubt Solver card shows a looping typing chat animation).",
+      "Courses Section: Premium grid of upcoming live classes with imagery and subtle hover zoom on images.",
+      "Testimonials: Masonry layout or a smooth, infinite horizontal scroll of student reviews.",
+      "Footer: Massive 'Vidhyasetu' logo text at the bottom, standard links, social icons."
+    ],
+    "dashboard": [
+      "Navigation: Persistent sidebar containing Logo, primary routes (Dashboard, Mock Tests, Library, Doubt AI), and user profile at the bottom.",
+      "Overview: Progress AreaChart (Recharts), Streak tracker (Flame icon + day count), Upcoming Schedule list.",
+      "Mock Test Engine: Immersive, full-screen mode UI. Sticky top bar with countdown timer, question palette grid on the right, question text and options on the left, 'Submit Test' functionality leading to a scored results view.",
+      "AI Doubt Solver: Dedicated chat interface route resembling modern LLM UIs (Shadcn ScrollArea, Input, Button) with simulated AI responses."
+    ],
+    "logo": "Create an original SVG component (a geometric 'V' intersecting a cube) in Electric Blue. Use this throughout the site and export it as the favicon."
+  },
+  "media": {
+    "image_urls": [
+      {
+        "url": "https://images.unsplash.com/photo-1514369118554-e20d93546b30?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHwyfHxpbmRpYW4lMjBzdHVkZW50JTIwc3R1ZHlpbmd8ZW58MHx8fHwxNzkzMjc1OTIxfDA&ixlib=rb-4.1.0&q=85",
+        "description": "Student studying intently",
+        "category": "Marketing Bento (Study Library) or Hero overlay image"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1604177091072-b7b677a077f6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzF8MHwxfHNlYXJjaHwzfHxpbmRpYW4lMjBzdHVkZW50JTIwc3R1ZHlpbmd8ZW58MHx8fHwxNzkzMjc1OTIxfDA&ixlib=rb-4.1.0&q=85",
+        "description": "Student sitting casually",
+        "category": "Testimonial Avatar or Success Stories"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1766074903112-79661da9ab45?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHwzfHxvbmxpbmUlMjBsaXZlJTIwY2xhc3N8ZW58MHx8fHwxNzkzMjc1OTIxfDA&ixlib=rb-4.1.0&q=85",
+        "description": "Online live class screen",
+        "category": "Courses & Live Classes Section thumbnail"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1644088379091-d574269d422f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGJsdWUlMjB0ZWNobm9sb2d5fGVufDB8fHx8MTc5MzI3NTkyMXww&ixlib=rb-4.1.0&q=85",
+        "description": "Abstract blue technology dots and lines",
+        "category": "Hero Background or AI Doubt Solver card background (with low opacity)"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1724405143873-cdaa5cac918e?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMjV8MHwxfHNlYXJjaHwzfHxhYnN0cmFjdCUyMGJsdWUlMjB0ZWNobm9sb2d5fGVufDB8fHx8MTc5MzI3NTkyMXww&ixlib=rb-4.1.0&q=85",
+        "description": "Blurry blue and white background",
+        "category": "Subtle UI Background overlay for glassmorphism panels"
+      }
+    ]
+  },
+  "instructions_to_main_agent": [
+    "You are building 'Vidhyasetu', an Awwwards-level EdTech platform. Your work must be exceptional, not generic.",
+    "Implement React Router to handle the dual nature: Marketing Landing Page (/) and Student SaaS Portal (/dashboard, /test, /library, /ai-chat).",
+    "Install required dependencies: framer-motion, @studio-freight/react-lenis, lucide-react, recharts, react-fast-marquee, clsx, tailwind-merge, sonner.",
+    "For the hero, use a large kinetic text reveal. Wrap text lines in spans with `overflow: hidden`, and animate the inner span upwards using framer-motion.",
+    "Create an interactive 3D-feeling 'Knowledge Cube' in the hero using CSS transforms (rotateX/rotateY mapped to mouse coordinates via framer-motion `useScroll` or `useTransform`).",
+    "In the Marketing Bento grid, create actual mini-UIs inside the cards (e.g., a tiny Recharts graph in the Analytics card, a mini typing animation in the AI card). Do not just use static images.",
+    "Build a fully functional UI for the Mock Test Engine, including a sticky timer, question palette grid, and a post-submission results view.",
+    "Ensure all interactive elements have descriptive `data-testid` attributes.",
+    "DO NOT use placeholder image services. ONLY use the Unsplash URLs provided in this file.",
+    "Use standard DOM elements (`div`, `section`) with Tailwind for the highly custom marketing layouts, but leverage Shadcn components for the complex interactive SaaS elements (Dropdowns, Dialogs, Inputs)."
+  ],
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
+    "You tend to converge toward generic, 'on distribution' outputs. Avoid the 'AI slop' aesthetic. Build something that looks hand-crafted and expensive.",
+    "Don't make generic centered layouts. Use asymmetry to create visual tension.",
+    "DO NOT apply universal transition (`transition: all`). Target specific properties like `transition-colors` or `transition-transform` to prevent breaking framer-motion.",
+    "DO NOT center align the app container in CSS. Respect natural reading flow.",
+    "Always use modern button styles (pill-shaped or sharp) with interaction animations. Avoid generic rounded-md blue buttons.",
+    "NEVER use emoji characters for icons. Use `lucide-react`.",
+    "Every interaction needs micro-animations (hover states, scaling, underlines).",
+    "Use 2-3x more spacing than typical. Empty space is premium.",
+    "Create depth through layered design elements with z-index hierarchy and glassmorphism.",
+    "Prioritize using pre-existing components from `src/components/ui` when applicable, and use `sonner` for all toasts."
+  ]
+}
